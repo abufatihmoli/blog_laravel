@@ -1,7 +1,8 @@
 @extends('template_blog.content')
 @section('isi')
     <!-- PAGE HEADER -->
-    @foreach ($data as $isi_post)
+	@foreach ($data as $isi_post)
+	<header>
 		<div id="post-header" class="page-header">
 			<div class="page-header-bg" style="background-image: url({{asset($isi_post->gambar)}});" data-stellar-background-ratio="0.1"></div>
 			<div class="container">
@@ -20,10 +21,14 @@
 				</div>
 			</div>
 		</div>
+	</header>
+	<div class="col-md-8 hot-post-left">
 		<!-- /PAGE HEADER -->
     <div class="section-row">
-        {{$isi_post->content}}
+		<br>
+        {!! $isi_post->content !!}
     </div>
-    @endforeach
+	@endforeach
+	</div>
 
 @endsection
